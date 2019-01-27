@@ -3,14 +3,14 @@
 
 # chmod 777 test.py
 
-import json, random
+import json, random, sys
 
-file = open("./S-2019-01-27-1.json", "r")
+file = open(sys.argv[1], "r")
 list = json.load(file)
 
-grammar = list['grammar'].encode("utf-8")
-description = list['description'].encode("utf-8")
-practices = list['practices']
+grammar = list["grammar"].encode("utf-8")
+description = list["description"].encode("utf-8")
+practices = list["practices"]
 
 keys = practices.keys()
 index = random.randint(0, len(keys) - 1)

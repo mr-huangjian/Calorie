@@ -3,9 +3,9 @@
 
 # chmod 777 test.py
 
-import json, random
+import json, random, sys
 
-file = open("./2019-01-27-2.json", "r")
+file = open(sys.argv[1], "r")
 list = json.load(file)
 
 # list = {
