@@ -16,20 +16,24 @@ list = json.load(file)
 # 	"嫩豆腐汤": "순두부찌개"
 # }
 
-list_keys = list.keys()
-random_index = random.randint(0, len(list_keys) - 1)
+def function():
+	list_keys = list.keys()
+	random_index = random.randint(0, len(list_keys) - 1)
 
-key = list_keys[random_index]
-val = list[key]
+	key = list_keys[random_index]
+	val = list[key]
 
-ch = key.encode("utf-8")
-kr = val.encode("utf-8")
+	ch = key.encode("utf-8")
+	kr = val.encode("utf-8")
 
-value = raw_input("请输入 [{}] 的韩文：\n".format(ch))
+	value = raw_input("请输入 [{}] 的韩文：\n".format(ch))
 
-if value.strip() == kr:
-	print "您答对了! "
-else:
-	print "你答错了！\n你的答案为：_" + value + "_" + "\n正确答案为：_" + kr + "_"
+	if value.strip() == kr:
+		print "您答对了! \n"
+	else:
+		print "你答错了！\n你的答案为：_" + value + "_" + "\n正确答案为：_" + kr + "_\n"
+	return
 
+while 1:
+	function()
 
