@@ -12,11 +12,17 @@ grammar = list["grammar"].encode("utf-8")
 description = list["description"].encode("utf-8")
 practices = list["practices"]
 
+error_index = -1
+
 def function():
 	keys = practices.keys()
-	index = random.randint(0, len(keys) - 1)
+	random_index = random.randint(0, len(keys) - 1)
 
-	key = keys[index]
+	global error_index
+	if error_index != -1:
+		random_index = error_index
+
+	key = keys[random_index]
 	val = practices[key]
 
 	ch = key.encode("utf-8")
@@ -29,8 +35,10 @@ def function():
 	value = raw_input(message)
 
 	if value.strip() == kr:
+		error_index = -1
 		print "您答对了! "
 	else:
+		error_index = random_index
 		print "你答错了！\n你的答案为：_" + value + "_" + "\n正确答案为：_" + kr + "_"
 	return
 
