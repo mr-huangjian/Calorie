@@ -59,7 +59,9 @@ class MemoryWords:
 			weight = this.weight[index]
 			key = this.listKeys[index]
 			val = this.list[key]
-			print '{} {}/{}'.format(weight, key.encode("utf-8"), val.encode("utf-8"))
+			key = key.encode("utf-8")
+			val = val.encode("utf-8")
+			print '{} {}/{}'.format(weight, key, val)
 		print ''
 
 
