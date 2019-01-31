@@ -25,7 +25,7 @@ class MemoryWords:
 		else:
 			if this.weight == [this.passWeight for i in range(this.listCount)]:
 				this.printWeight()
-				print "done!"
+				print "Well Done! 🎉"
 				exit()
 			elif this.weight[index] >= this.passWeight:
 				return this.getRandomIndex()
@@ -54,11 +54,13 @@ class MemoryWords:
 				print "你答错了！\n你的答案为：_" + input + "_" + "\n正确答案为：_" + val + "_\n"
 
 	def printWeight(this):
+		print ''
 		for index in range(this.listCount):
 			weight = this.weight[index]
 			key = this.listKeys[index]
 			val = this.list[key]
 			print '{} {}/{}'.format(weight, key.encode("utf-8"), val.encode("utf-8"))
+		print ''
 
 
 MemoryWords(list).run()
