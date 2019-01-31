@@ -11,7 +11,7 @@ list = json.load(file)
 class MemoryWords:
 	passWeight = 5
 	repeatIndex = None
-	
+
 	def __init__(this, list):
 		this.list = list
 		this.listKeys = list.keys()
