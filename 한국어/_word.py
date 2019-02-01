@@ -50,7 +50,7 @@ class MemoryWords:
 				print "您答对了! \n"
 			else:
 				this.repeatIndex = idx
-				this.weight[idx] = this.weight[idx] - 1
+				this.weight[idx] = this.weight[idx] - 2
 				print "你答错了！\n你的答案为：_" + input + "_" + "\n正确答案为：_" + val + "_\n"
 
 	def printWeight(this):
