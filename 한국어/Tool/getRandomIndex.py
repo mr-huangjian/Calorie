@@ -28,7 +28,11 @@ import json, random, numpy as np
     https://blog.csdn.net/zn505119020/article/details/78190993
 """
 
+didRememberAllWords = False
+
 def getRandomIndex(topP=0.15, baseP=0.50, lowP=0.35):
+    global didRememberAllWords
+
     filePath = './word.json'
 
     file = open(filePath, "r")
@@ -38,7 +42,7 @@ def getRandomIndex(topP=0.15, baseP=0.50, lowP=0.35):
     if len(list) == 0:
         exit()
 
-    baseMaxLevel = 3
+    baseMaxLevel = 4
     baseMinLevel = -3
 
     topList = []
@@ -55,6 +59,10 @@ def getRandomIndex(topP=0.15, baseP=0.50, lowP=0.35):
             lowList.append(index)
         else:
             baseList.append(index)
+
+    if didRememberAllWords == False and len(lowList) == 0 and len(baseList) == 0 and len(topList) > 0:
+        didRememberAllWords = True
+        print "真棒，你已全部记住了！\n"
 
     level = np.random.choice([1, 0, -1], p=[topP, baseP, lowP])
 
