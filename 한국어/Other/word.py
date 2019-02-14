@@ -5,16 +5,8 @@
 
 import json, random, sys, time
 
-def getRunTime(startTime):
-    endTime = time.time()
-    seconds = endTime - startTime
-    m, s = divmod(seconds, 60)
-    return "%02d:%02d" % (m, s)
-
 file = open(sys.argv[1], "r")
 list = json.load(file)
-
-startTime = time.time()
 
 class MemoryWords:
 	passWeight = 4
@@ -32,7 +24,7 @@ class MemoryWords:
 			index = this.repeatIndex
 		else:
 			if this.weight == [this.passWeight for i in range(this.listCount)]:
-				print "Well Done! 🎉 Total time {} \n".format(getRunTime(startTime))
+				print "Well Done! 🎉 \n"
 				exit()
 			elif this.weight[index] >= this.passWeight:
 				return this.getRandomIndex()
@@ -46,7 +38,7 @@ class MemoryWords:
 			key = key.encode("utf-8")
 			val = val.encode("utf-8")
 
-			input = raw_input("请输入 [{}] 的韩文： (已花费 {})\n".format(key, getRunTime(startTime)))
+			input = raw_input("请输入 [{}] 的韩文：\n".format(key))
 
 			if input.strip() == val:
 				this.repeatIndex = None
