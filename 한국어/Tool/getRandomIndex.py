@@ -30,7 +30,7 @@ import json, random, numpy as np
 
 didRememberAllWords = False
 
-def getRandomIndex(topP=0.10, baseP=0.55, lowP=0.35):
+def getRandomIndex(topP=0.00, baseP=0.20, lowP=0.80):
     global didRememberAllWords
 
     filePath = './word.json'
