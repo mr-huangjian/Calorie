@@ -45,7 +45,7 @@ def run():
 		# 错误则减少权重-2
 		repeatIndex = index
 		new_item["weight"] = weight - 2
-		print "你答错了！\n你的答案为：_" + input + "_" + "\n正确答案为：_" + kr + "_\n"
+		print "你答错了！👿👿👿👿👿👿👿👿\n你的答案为：_" + input + "_" + "\n正确答案为：_" + kr + "_\n"
 
 	list[index] = new_item
 	file = io.open(filePath, 'w')

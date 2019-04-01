@@ -30,7 +30,7 @@ import json, random, numpy as np
 
 didRememberAllWords = False
 
-def getRandomIndex(topP=0.20, baseP=0.30, lowP=0.50):
+def getRandomIndex(topP=0.05, baseP=0.15, lowP=0.80):
     global didRememberAllWords
 
     filePath = './word.json'
@@ -42,8 +42,8 @@ def getRandomIndex(topP=0.20, baseP=0.30, lowP=0.50):
     if len(list) == 0:
         exit()
 
-    baseMaxLevel = 4
-    baseMinLevel = -3
+    baseMaxLevel = 2
+    baseMinLevel = -4
 
     topList = []
     lowList = []
@@ -53,7 +53,7 @@ def getRandomIndex(topP=0.20, baseP=0.30, lowP=0.50):
         item = list[index]
         weight = item["weight"]
 
-        if 8 > weight > baseMaxLevel:
+        if 6 > weight > baseMaxLevel:
             topList.append(index)
         elif baseMinLevel <= weight <= baseMaxLevel:
             baseList.append(index)
